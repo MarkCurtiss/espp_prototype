@@ -2,10 +2,10 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.1'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'pg'
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
