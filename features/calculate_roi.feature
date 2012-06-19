@@ -6,10 +6,10 @@ Feature: Calculate ROI
   Scenario: Calculate
   Given I am on the new espp page
   When I fill in the following:
-     | Contribution   | 10000  | 
-     | Starting Price | $15    | 
-     | Closing Price  | $18.75 | 
-     | Discount       | 15%    | 
+      | Contribution   | 10000 |
+      | Starting Price | 15    |
+      | Closing Price  | 18.75 |
+      | Discount       | 15    |
   And I press "Calculate ROI"
   Then I should see "You purchased 784 shares at your discounted price of $12.75"
   And I should see "You sold them for $14700.0 for a profit of $4700.0"
