@@ -1,0 +1,15 @@
+%h1 halp
+= form_for @espp do |form|
+  = form.label(:contribution, 'Contribution')
+  = form.text_field(:contribution)
+  %br
+  = form.label(:starting_price, 'Starting Price')
+  = form.text_field(:starting_price)
+  %br
+  = form.label(:closing_price, 'Closing Price')
+  = form.text_field(:closing_price)
+  %br
+  = form.label(:discount, 'Discount')
+  = form.text_field(:discount)
+  %br
+  = form.submit('Calculate ROI')

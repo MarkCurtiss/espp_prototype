@@ -4,6 +4,7 @@ Feature: Calculate ROI
   I want to figure out my ROI
 
   Scenario: Calculate
+  Given I am on the new espp page
   When I fill in the following:
      | Contribution   | 10000  | 
      | Starting Price | $15    | 
