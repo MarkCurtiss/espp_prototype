@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-EsppCalcSite::Application.load_tasks
+EsppPrototype::Application.load_tasks

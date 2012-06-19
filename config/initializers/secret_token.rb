@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-EsppCalcSite::Application.config.secret_token = 'a7e46cef62644ac517ef5d8c4f711dfef7bbbbe3901818c45e99bb5a581d597ddd0d4cec396e8678680e11c55b081da11da7d1074fa5a5c5a04813ffa0462eaf'
+EsppPrototype::Application.config.secret_token = '861610aeb48937525f4a5793263f8112d1443657584b51796e753883f30632a68fcbf76ccb166b58af4856474a90bc793e189d60ffd3e00b8c1c2d60bc1dac67'

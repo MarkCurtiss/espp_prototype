@@ -1,4 +1,4 @@
-EsppCalcSite::Application.routes.draw do
+EsppPrototype::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -2,10 +2,13 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.1'
 
-group :test do
+group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem "rspec-rails", "~> 2.0"
 end
+
+gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
