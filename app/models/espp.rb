@@ -3,7 +3,7 @@ class Espp
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :contribution, :starting_price, :closing_price, :discount, :shares, :sale_price
+  attr_accessor :contribution, :starting_price, :closing_price, :discount, :shares, :sale_price, :amount_from_sale, :profit, :profit_after_taxes_immediate, :profit_after_taxes_delayed, :roi_for_immediate_sale, :roi_for_delayed_sale
   validates_presence_of :contribution, :starting_price, :closing_price, :discount
 
   def initialize(attributes = {})
@@ -18,8 +18,16 @@ class Espp
       self.discount       = discount.to_f / 100
 
       self.sale_price = [self.starting_price, self.closing_price].min * (1 - self.discount)
-      #abort "our contribution is #{self.contribution} and our sale_price is #{self.sale_price} and our starting price is #{self.starting_price} and our closing price is #{self.closing_price}"
       self.shares = (contribution / sale_price).to_i
+      self.amount_from_sale = shares * [starting_price, closing_price].max
+      self.profit = amount_from_sale - contribution
+
+      self.profit_after_taxes_immediate = profit * (1 - 0.30)
+      self.roi_for_immediate_sale = profit_after_taxes_immediate/contribution
+
+      self.profit_after_taxes_delayed = profit * (1 - 0.15)
+      self.roi_for_delayed_sale = profit_after_taxes_delayed/contribution
+
     end
   end
 
