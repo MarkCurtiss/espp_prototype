@@ -1,4 +1,4 @@
-EsppPrototype::Application.routes.draw do
+EsppCalcSite::Application.routes.draw do
 
   resources :espps
   # The priority is based upon order of creation:
