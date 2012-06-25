@@ -1,0 +1,14 @@
+%p#notice 
+=notice
+
+= form_for @espp do |form|
+  = form.label(:shares, "Your contribution of #{@espp.contribution} purchased #{@espp.shares} shares at your discounted price $#{@espp.sale_price}")
+  %br
+  = form.label(:amount_from_sale, "You sold them for $#{@espp.amount_from_sale} for a profit of $#{@espp.profit}")
+  %br
+  = form.label(:profit_immediate_sale, "If you sell today, your profit after taxes will be $#{@espp.profit_after_taxes_immediate} for an ROI of #{@espp.roi_for_immediate_sale}")
+  %br
+  = form.label(:profit_delayed_sale, "If you sell in 1 year, your profit after taxes will be $#{@espp.profit_after_taxes_delayed} for an ROI of #{@espp.roi_for_delayed_sale}")
+ 
+= link_to('Edit', edit_espp_path(@espp))
+= link_to('Back', espps_path)
