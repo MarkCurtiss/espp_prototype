@@ -9,6 +9,22 @@
   = form.text_field(:closing_price)
   %br
   = form.label(:discount, 'Discount')
-  = form.text_field(:discount)
+  = form.text_field(:discount, :id => 'discount_field')
+  %div#slider
   %br
   = form.submit('Calculate ROI')
+
+  :javascript
+    var discountField = $('#discount_field')
+    var slider = $('#slider').slider({
+      min: 1,
+      max: 100,
+      step: 1,
+      range: "min",
+      slide: function(event, ui) {
+        $('#discount_field').val(ui.value - 1);
+      }
+    });
+    discountField.change(function() {
+      slider.slider( "value", (this.value + 1)/10);
+    });
