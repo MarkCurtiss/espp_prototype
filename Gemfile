@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
+gem 'rails', '3.2.11'
 
 group :development, :test do
   gem 'cucumber-rails', :require => false
